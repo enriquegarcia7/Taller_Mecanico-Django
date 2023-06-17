@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
-  <link rel="shortcut icon" href="Img/RM.ico">
+  <link rel="shortcut icon" href="{%static 'images/RM.ico'%}">
   <title>Rayo Makween</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,11 +20,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <LINK REL=StyleSheet HREF="Login.css" TYPE="text/css" MEDIA=screen>
-
-
-
-
+  <LINK REL=StyleSheet HREF="{% static 'css/Login.css' %}" TYPE="text/css" MEDIA=screen>
+ 
 
 </head>
 
@@ -33,7 +31,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c0b12;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="Index.html"><img src="logo.png" alt="Rayo Makween" width="30"
+        <a class="navbar-brand" href="/"><img src="{%static 'images/logo.png'%}" alt="Rayo Makween" width="30"
             height="30">RayoMakween</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="Index.html">Inicio</a>
+              <a class="nav-link" aria-current="page" href="/">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Nosotros.html">Nosotros</a>
@@ -51,7 +49,7 @@
               <a class="nav-link" href="trabajos.html">Trabajos realizados</a>
             </li>
             <li class="nav-item">
-            <li><a class="nav-link" href="Agendar.html">Agendar</a>
+            <li><a class="nav-link" href="/agendar">Agendar</a>
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
@@ -104,7 +102,7 @@
     <div class="container-fluid d-flex justify-content-center align-items-center">
       <div class="container2">
         <div class="logo">
-          <img src="logo.png" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
+          <img src="{%static 'images/logo.png'%}" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
         </div>
         <div class="info">
           <h3>Rayo Makween - Taller mecanico</h3>
