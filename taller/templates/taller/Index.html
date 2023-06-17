@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
-  <link rel="shortcut icon" href="Img/RM.ico">
+  <link rel="shortcut icon" href="{%static 'images/RM.ico'%}">
   <title>Rayo Makween</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <LINK REL=StyleSheet HREF="Index.css" TYPE="text/css" MEDIA=screen>
+  <link rel="stylesheet" href="{% static 'css/Index.css' %}">
 </head>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c0b12;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="Index.html"><img src="logo.png" alt="Rayo Makween" width="30" height="30">RayoMakween</a>
+        <a class="navbar-brand" href="Index.html"><img src="{%static 'images/logo.png'%}" alt="Rayo Makween" width="30" height="30">RayoMakween</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,16 +60,16 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="afinamiento.jpg" class="d-block w-100" alt="afinamiento">
+        <img src="{%static 'images/afinamiento.jpg'%}" class="d-block w-100" alt="afinamiento">
       </div>
       <div class="carousel-item">
-        <img src="lubricentro.jpg" class="d-block w-100" alt="lubricentro">
+        <img src="{%static 'images/lubricentro.jpg'%}" class="d-block w-100" alt="lubricentro">
       </div>
       <div class="carousel-item">
-        <img src="alineacion.jpg" class="d-block w-100" alt="alineacion">
+        <img src="{%static 'images/alineacion.jpg'%}" class="d-block w-100" alt="alineacion">
       </div>
       <div class="carousel-item">
-        <img src="pintura.jpg" class="d-block w-100" alt="pintura">
+        <img src="{%static 'images/pintura.jpg'%}" class="d-block w-100" alt="pintura">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -85,7 +86,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="card">
-          <img src="mantenimiento.jpg" class="card-img-top" alt="mante">
+          <img src="{%static 'images/mantenimiento.jpg'%}" class="card-img-top" alt="mante">
           <div class="card-body">
             <h5 class="card-title">Mecanica General</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -94,7 +95,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="pintura.jpg" class="card-img-top" alt="tren">
+          <img src="{%static 'images/pintura.jpg'%}" class="card-img-top" alt="tren">
           <div class="card-body">
             <h5 class="card-title">Pintura</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -103,7 +104,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="lubricentro.jpg" class="card-img-top" alt="lubri">
+          <img src="{%static 'images/lubricentro.jpg'%}" class="card-img-top" alt="lubri">
           <div class="card-body">
             <h5 class="card-title">Chequeo General</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -112,7 +113,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="afinamiento.jpg" class="card-img-top" alt="afina">
+          <img src="{%static 'images/afinamiento.jpg'%}" class="card-img-top" alt="afina">
           <div class="card-body">
             <h5 class="card-title">Servicio de Scanner</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -126,7 +127,7 @@
     <div class="container-fluid d-flex justify-content-center align-items-center">
       <div class="container2">
         <div class="logo">
-          <img src="logo.png" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
+          <img src="{%static 'images/logo.png'%}" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
         </div>
         <div class="info">
           <h3>Rayo Makween - Taller mecanico</h3>
