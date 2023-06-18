@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +29,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c0b12;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="Index.html"><img src="logo.png" alt="Rayo Makween" width="30" height="30">RayoMakween</a>
+        <a class="navbar-brand" href="/"><img src="{%static 'images/logo.png'%}" alt="Rayo Makween" width="30" height="30">RayoMakween</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,21 +37,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="Index.html">Inicio</a>
+              <a class="nav-link" aria-current="page" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Nosotros.html">Nosotros</a>
+              <a class="nav-link" href="/nosotros">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="trabajos.html">Trabajos realizados</a>
+              <a class="nav-link" href="/trabajos">Trabajos realizados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Agendar.html">Agendar</a>
+              <a class="nav-link" href="/agendar">Agendar</a>
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link" href="Login.html">Login</a>
+              <a class="nav-link" href="/login">Login</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -67,7 +68,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="card">
-          <img src="soldaduras.jpg" class="card-img-top" alt="soldar">
+          <img src="{%static 'images/soldaduras.jpg'%}" class="card-img-top" alt="soldar">
           <div class="card-body">
             <h5 class="card-title">Soldadura de escape</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -76,7 +77,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="alineacion.jpg" class="card-img-top" alt="tren">
+          <img src="{%static 'images/alineacion.jpg'%}" class="card-img-top" alt="tren">
           <div class="card-body">
             <h5 class="card-title">Alineación</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -85,7 +86,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="rectificadoMotor.jpg" class="card-img-top" alt="lubri">
+          <img src="{%static 'images/rectificadoMotor.jpg'%}" class="card-img-top" alt="lubri">
           <div class="card-body">
             <h5 class="card-title">Rectificado de Motor</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -94,7 +95,7 @@
       </div>
       <div class="col-md-3">
         <div class="card">
-          <img src="frenos.jpg" class="card-img-top" alt="frenos">
+          <img src="{%static 'images/frenos.jpg'%}" class="card-img-top" alt="frenos">
           <div class="card-body">
             <h5 class="card-title">Cambio de discos de freno</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime minus dolore commodi quibusdam enim.</p>
@@ -108,7 +109,7 @@
     <div class="container-fluid d-flex justify-content-center align-items-center">
       <div class="container2">
         <div class="logo">
-          <img src="logo.png" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
+          <img src="{%static 'images/logo.png'%}" alt="rayo" width="200" height="auto" class="rounded mx-auto d-block">
         </div>
         <div class="info">
           <h3>Rayo Makween - Taller mecánico</h3>
