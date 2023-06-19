@@ -18,3 +18,9 @@ def nosotros(request):
 
 def registro(request):
     return render(request, 'taller/Registro.html', {})
+
+def base(request):
+    return render(request, 'taller/Base.html', {})
+
+def login2(request):
+    return render(request, 'taller/Login2.html', {})
