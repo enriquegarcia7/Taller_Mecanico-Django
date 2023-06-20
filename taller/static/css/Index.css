@@ -71,16 +71,3 @@ header {
   margin-bottom: 5px;
 }
 
-.footer .social {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.footer .social a {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  margin-right: 10px;
-  font-size: 20px;
-}

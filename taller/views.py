@@ -22,5 +22,9 @@ def registro(request):
 def base(request):
     return render(request, 'taller/Base.html', {})
 
-def login2(request):
-    return render(request, 'taller/Login2.html', {})
+def mecanico(request):
+    return render(request, 'taller/Admin.html', {})
+    
+def mecanico(request):
+    return render(request, 'taller/Mecanico.html', {})
+    
