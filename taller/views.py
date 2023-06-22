@@ -11,7 +11,7 @@ def agendar(request):
     return render(request, 'taller/Agendar.html', {})
 
 def trabajos(request):
-    return render(request, 'taller/trabajos.html', {})
+    return render(request, 'taller/Trabajos.html', {})
 
 def nosotros(request):
     return render(request, 'taller/Nosotros.html', {})
@@ -22,12 +22,12 @@ def registro(request):
 def base(request):
     return render(request, 'taller/Base.html', {})
 
-def admin(request):
-    return render(request, 'taller/Admin.html', {})
+def administrador(request):
+    return render(request, 'taller/Administrador.html', {})
     
 def mecanico(request):
     return render(request, 'taller/Mecanico.html', {})
 
 def index2(request):
     return render(request, 'taller/Index2.html', {})
-    
+

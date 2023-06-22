@@ -11,6 +11,6 @@ urlpatterns = [
      path('registro/', views.registro, name='registro'),
      path('base/', views.base, name='base'),
      path('mecanico/', views.mecanico, name='mecanico'),
-     path('admin/', views.admin, name='admin'),
-     path('index2/', views.index2, name='index2'),
+     path('administrador/', views.administrador, name='administrador'),
+     path('index2/', views.index2, name='index2'),     
 ]
