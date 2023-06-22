@@ -28,6 +28,6 @@ def admin(request):
 def mecanico(request):
     return render(request, 'taller/Mecanico.html', {})
 
-def login2(request):
-    return render(request, 'taller/Login2.html', {})
+def index2(request):
+    return render(request, 'taller/Index2.html', {})
     

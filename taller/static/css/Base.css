@@ -22,6 +22,31 @@ footer .logo {
     display: block;
     margin: 0 auto;
   }
+
+  .carousel-item {
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .carousel-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
   
 
 
