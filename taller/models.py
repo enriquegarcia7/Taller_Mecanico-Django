@@ -9,6 +9,7 @@ class Reserva(models.Model):
     Hora_Actual = models.DateTimeField(default=timezone.now)
     Fecha_Reserva = models.DateTimeField(blank=True, null=True)
 
+
     def hora_actual(self):
         self.published_date = timezone.now()
         self.save()
