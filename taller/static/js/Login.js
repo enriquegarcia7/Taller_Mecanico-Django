@@ -31,7 +31,7 @@ document.getElementById("login-form").addEventListener("submit", function (event
   if (userType === "mecanico") {
     window.location.href = "Mecanico.html";
   } else if (userType === "administrador") {
-    window.location.href = "Admin.html";
+    window.location.href = "Administrador.html";
   }
 });
 function cerrar() {
