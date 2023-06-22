@@ -4,16 +4,17 @@ from django.utils import timezone
 
 class Reserva(models.Model):
     Rut = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    Nombre = models.CharField(max_length=200)
-    Telefono = models.TextField()
-    Hora_Actual = models.DateTimeField(default=timezone.now)
+    Nombre = models.CharField(max_length=50)
+    Telefono = models.IntegerField()
+    Email = models.CharField(max_length=50)
+    Detalle = models.CharField(max_length=500)
     Fecha_Reserva = models.DateTimeField(blank=True, null=True)
 
-    def hora_actual(self):
-        self.published_date = timezone.now()
-        self.save()
+    def clean(self):
+        if self.fecha_reserva < timezone.now().date():
+            raise ValidationError('La fecha de reserva debe ser posterior a la fecha actual.')
 
-    def __str__(self):
-        return self.title
 
-# Create your models 
+
+#python manage.py makemigrations
+#python manage.py migrate
