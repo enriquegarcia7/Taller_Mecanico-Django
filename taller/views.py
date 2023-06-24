@@ -8,6 +8,9 @@ def login(request):
     return render(request, 'taller/Login.html', {})
 
 def agendar(request):
+    
+
+
     return render(request, 'taller/Agendar.html', {})
 
 def trabajos(request):
