@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import ReservaForm
+from .forms import ReservaForm , TrabajoForm
 
 # Create your views here.
 def index(request):
@@ -38,7 +38,19 @@ def administrador(request):
     return render(request, 'taller/Administrador.html', {})
     
 def mecanico(request):
-    return render(request, 'taller/Mecanico.html', {})
+    data = {
+        'form': TrabajoForm()
+    }
+
+    if request.method == 'POST':
+        formulario = TrabajoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Trabajo Agregado"
+        else:
+            data["form"] = formulario
+
+    return render(request, 'taller/Mecanico.html', data)
 
 def index2(request):
     return render(request, 'taller/Index2.html', {})
