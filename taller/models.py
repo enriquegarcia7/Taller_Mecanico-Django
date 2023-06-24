@@ -32,7 +32,7 @@ class Trabajo(models.Model):
     marca = models.CharField(max_length=50)
     modelo = models.CharField(max_length=50)
     fecha_atencion = models.DateField(blank=True, null=True)
-    imagen = models.ImageField(upload_to='trabajos', null=True) 
+    imagen = models.ImageField(upload_to='trabajos/', null=True) 
     mensaje = models.TextField()
 
 

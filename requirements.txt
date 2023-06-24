@@ -1,2 +1,4 @@
 Django~=3.2.10
-pillow  
+pillow
+django-crispy-forms 
+crispy-bootstrap5
