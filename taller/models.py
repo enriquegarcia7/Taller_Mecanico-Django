@@ -32,4 +32,4 @@ class Trabajo(models.Model):
 
 
     def __str__(self):
-        return self.id_vehiculo
+        return self.mecanico
