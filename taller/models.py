@@ -28,15 +28,16 @@ mecanicos = [
 
 class Trabajo(models.Model):
     mecanico = models.IntegerField(choices=mecanicos)
-    nombre_cliente = models.CharField(max_length=50)
-    telefono_cliente = models.IntegerField()
     id_vehiculo = models.CharField(max_length=18)
     marca = models.CharField(max_length=50)
     modelo = models.CharField(max_length=50)
-    email_cliente = models.EmailField(max_length=50)
-    fecha_atencion = models.DateTimeField(blank=True, null=True)
+    fecha_atencion = models.DateField(blank=True, null=True)
     imagen = models.ImageField(upload_to='trabajos', null=True) 
     mensaje = models.TextField()
+
+    def clean(self):
+        if self.fecha_atencion.date() < timezone.now().date():
+            raise ValidationError('La fecha debe ser posterior a la fecha actual.')
 
     def __str__(self):
         return self.id_vehiculo
