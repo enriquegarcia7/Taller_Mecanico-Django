@@ -1,3 +1,4 @@
+
 document.getElementById("login-form").addEventListener("submit", function (event) {
   event.preventDefault();
   var email = document.getElementById("email").value;
@@ -29,9 +30,9 @@ document.getElementById("login-form").addEventListener("submit", function (event
 
 
   if (userType === "mecanico") {
-    window.location.href = "Mecanico.html";
+    window.location.href = "mecanico";
   } else if (userType === "administrador") {
-    window.location.href = "Administrador.html";
+    window.location.href = "administrador2";
   }
 });
 function cerrar() {

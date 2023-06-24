@@ -40,10 +40,24 @@
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
+            
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mecanico">VMecanico</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/administrador">VAdministrador</a>
+            </li>
+            
           </ul>
+          {% block content3 %} 
+
+
+          {% endblock %}
+
+
           <form class="d-flex">
             <div class="input-group">
               <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">

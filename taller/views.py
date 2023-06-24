@@ -36,7 +36,12 @@ def base(request):
     return render(request, 'taller/Base.html', {})
 
 def administrador(request):
-    return render(request, 'taller/Administrador.html', {})
+    trabajos = Trabajo.objects.all()
+
+    data = {
+        'trabajos' : trabajos 
+    }
+    return render(request, 'taller/Administrador.html',data)
     
 def mecanico(request):
     data = {
