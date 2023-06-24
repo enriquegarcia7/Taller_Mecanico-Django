@@ -35,9 +35,6 @@ class Trabajo(models.Model):
     imagen = models.ImageField(upload_to='trabajos', null=True) 
     mensaje = models.TextField()
 
-    def clean(self):
-        if self.fecha_atencion.date() < timezone.now().date():
-            raise ValidationError('La fecha debe ser posterior a la fecha actual.')
 
     def __str__(self):
         return self.id_vehiculo

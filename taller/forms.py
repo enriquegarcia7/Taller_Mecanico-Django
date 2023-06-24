@@ -1,9 +1,9 @@
 from django import forms
 
-from .models import Post
+from .models import Reserva , Trabajo
 
-class PostForm(forms.ModelForm):
 
-    class Meta:
-        model = Post
-        fields = ('title', 'text',)
+class TrabajoForm(forms.ModelForm):
+   class Meta:
+        model = Trabajo
+        fields = '__all__'

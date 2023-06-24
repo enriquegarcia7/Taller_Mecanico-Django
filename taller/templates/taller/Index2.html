@@ -11,69 +11,6 @@
 
 {% block content %}
 
-<div class="container mt-5">
-    <form class="p-3 border rounded">
-        <h1 class="text-center mb-4"> INGRESOS DE TRABAJOS </h1>
-        <div class="row">
-            <div class="col-sm-6 mb-3">
-                <div class="form-floating">
-                    <select class="form-select" id="Mecanico" name="Mecanico">
-                        <option value="0" disabled selected>Seleccione un mecánico</option>
-                        <option value="1">PEDRO SOTO - Especialista en Electronica Automotriz</option>
-                        <option value="2">JORGE GONZALEZ - Especialista en Caja de Cambios</option>
-                        <option value="3">JOSE MUÑOZ - Especialista en Suspensión y Dirección</option>
-                    </select>
-                    <label for="trabajo">Mecanico:</label>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-                <div class="form-floating">
-                    <select class="form-select" id="trabajo" name="trabajo">
-                        <option value="0" disabled selected>Seleccione una opción</option>
-                        <option value="1">Cambio de aceite</option>
-                        <option value="2">Cambio de neumáticos</option>
-                        <option value="3">Reparación de frenos</option>
-                    </select>
-                    <label for="trabajo">Trabajo:</label>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="auto" name="auto" placeholder=" ">
-                    <label for="auto">Auto:</label>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="modelo" name="modelo" placeholder=" ">
-                    <label for="modelo">Modelo:</label>
-                </div>
-            </div>
-            <div class="col-sm-6 mb-3">
-                <div class="form-floating">
-                    <textarea class="form-control" id="comentario" name="comentario" placeholder=" "></textarea>
-                    <label for="comentario">Comentario:</label>
-                </div>
-            </div>
-            <div class="col-12 mb-3">
-                <div class="form-floating">
-                    <select class="form-select" id="motivo" name="motivo">
-                      <option value="0" disabled selected>Seleccione una opción</option>
-                        <option value="1">Post con mala ortografía</option>
-                        <option value="2">Imágenes sin calidad</option>
-                        <option value="3">Trabajo mal realizado</option>
-                    </select>
-                    <label for="motivo">Motivo de la eliminación:</label>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-dark">Eliminar Trabajo</button>
-            <button type="submit" class="btn btn-dark">Aceptar Trabajo</button>
-        </div>
-
-    </form>
-</div>
 
 
 {% endblock %}
