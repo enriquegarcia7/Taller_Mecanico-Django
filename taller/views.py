@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect , get_object_or_404
 from .forms import ReservaForm , TrabajoForm
+from .models import Trabajo
 
 # Create your views here.
 def index(request):
@@ -55,3 +56,34 @@ def mecanico(request):
 def index2(request):
     return render(request, 'taller/Index2.html', {})
 
+def administrador2(request):
+    trabajos = Trabajo.objects.all()
+
+    data = {
+        'trabajos' : trabajos 
+    }
+    return render(request, 'taller/Administrador2.html',data)
+
+def editmecanico(request,id):
+
+    trabajo = get_object_or_404(Trabajo, id=id)
+
+    data = {
+        'form': TrabajoForm(instance=trabajo)
+    }
+    if request.method == 'POST':
+        formulario = TrabajoForm(data=request.POST, files=request.FILES , instance=trabajo)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Editado Correctamente"
+            return redirect(to="administrador2")
+        else:
+            data["form"] = formulario
+
+    return render(request, 'taller/EditMecanico.html', data)
+
+
+def eliminar(request,id):
+    trabajo = get_object_or_404(Trabajo, id=id)
+    trabajo.delete()
+    return redirect(to="administrador2")
