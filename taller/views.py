@@ -43,7 +43,7 @@ def mecanico(request):
     }
 
     if request.method == 'POST':
-        formulario = TrabajoForm(data=request.POST)
+        formulario = TrabajoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
             data['mensaje'] = "Trabajo Agregado"
