@@ -1,52 +1,28 @@
 {% extends 'taller/Base.html' %}
 {% load static %}
 
-<!-- Contenido CSS  -->
-{% block css %}
-
-{% endblock %}
-
-
 <!-- Contenido Principal -->
 
 {% block content %}
+{% load crispy_forms_tags%}
+
 <div class="container mt-5">
     <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="card shadow-sm">
           <div class="card-body">
             <h4 class="card-title text-center mb-4">Agenda tu cita</h4>
-            <form action="#" method="post">
-              <div class="mb-3">
-                <label id="nombre" for="nombre" class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
-              </div>
-              <div class="mb-3">
-                <label id= "telefono" for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono" required>
-              </div>
-              <div class="mb-3">
-                <label id= "email" for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-              </div>
-              <div class="row g-2">
-                <div class="col-md">
-                  <label id= "feche" for="fecha" class="form-label">Fecha</label>
-                  <input type="date" class="form-control" id="fecha" name="fecha" required>
-                </div>
-                <div class="col-md">
-                  <label for="hora" class="form-label">Hora</label>
-                  <input type="time" class="form-control" id="hora" name="hora" required>
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">Mensaje (opcional)</label>
-                <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-dark">Agendar cita</button>
-              </div>
+            <form action="" class="" method="post">
+
+              {% csrf_token %}
+              {{ form | crispy }}
+              
+              <br>
+              <br>
+              <button type="submit" class="btn btn-dark">Agendar</button>
+          
             </form>
+            {{mensaje}}
           </div>
         </div>
       </div>
@@ -54,29 +30,3 @@
   </div>
 {% endblock %}
 
-
-<!-- Contenido Final  -->
-
-{% block content2 %}
-<script>
-    function validateForm() {
-      var nombre = document.getElementById("nombre").value;
-      var telefono = document.getElementById("telefono").value;
-      var email = document.getElementById("email").value;
-      var fecha = document.getElementById("fecha").value;
-  
-      if (nombre === "" || telefono === "" || email === "" || fecha === "") {
-        alert("Por favor, complete todos los campos obligatorios.");
-        return false;
-      }
-  
-      var fechaActual = new Date();
-      var fechaSeleccionada = new Date(fecha);
-  
-      if (fechaSeleccionada >= fechaActual) {
-        alert("La fecha debe ser anterior a la fecha actual.");
-        return false;
-      }
-    }
-  </script>
-{% endblock %}

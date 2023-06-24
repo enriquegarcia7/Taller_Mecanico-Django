@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import ReservaForm
 
 # Create your views here.
 def index(request):
@@ -8,10 +9,18 @@ def login(request):
     return render(request, 'taller/Login.html', {})
 
 def agendar(request):
-    
-
-
-    return render(request, 'taller/Agendar.html', {})
+    data = {
+        'form': ReservaForm()
+    }
+    if request.method == 'POST':
+        formulario = ReservaForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Reserva realizada!"
+        else:
+            data["form"] = formulario
+            
+    return render(request, 'taller/Agendar.html', data)
 
 def trabajos(request):
     return render(request, 'taller/Trabajos.html', {})

@@ -1,9 +1,7 @@
 from django import forms
+from .models import Reserva
 
-from .models import Post
-
-class PostForm(forms.ModelForm):
-
+class ReservaForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = ('title', 'text',)
+        model = Reserva
+        fields = '__all__'

@@ -1,2 +1,5 @@
 Django~=3.2.10
 pillow  
+django-admin-interface
+django-crispy-forms
+crispy-bootstrap5
