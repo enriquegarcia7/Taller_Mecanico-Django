@@ -41,15 +41,32 @@
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">
             
+            {% if user.is_authenticated %}
+
             <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link" href="#">@{{ user.username }}</a>
             </li>
+
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+
+            {% endif %}
+
+
+
             <li class="nav-item">
               <a class="nav-link" href="/mecanico">VMecanico</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/administrador">VAdministrador</a>
             </li>
+            
             
           </ul>
           {% block content3 %} 
