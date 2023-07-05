@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'taller/Index.html', {})
 
 def login(request):
-    return render(request, 'taller/Login.html', {})
+    return render(request, 'registration/Login.html', {})
 
 def agendar(request):
     data = {
