@@ -1,6 +1,9 @@
-from django.shortcuts import render,redirect , get_object_or_404
-from .forms import ReservaForm , TrabajoForm
+from django.shortcuts import render,redirect , get_object_or_404 
+from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm
 from .models import Trabajo
+from django.contrib import messages
+from django.contrib.auth import authenticate,login
+
 
 # Create your views here.
 def index(request):
@@ -30,7 +33,19 @@ def nosotros(request):
     return render(request, 'taller/Nosotros.html', {})
 
 def registro(request):
-    return render(request, 'taller/Registro.html', {})
+    data = {
+        'form':CustomUserCreationForm()
+    }
+
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Te has registrado correctamente")            
+            return redirect(to="/")       
+        data["form"] = formulario
+
+    return render(request, 'registration/registro.html', data)
 
 def base(request):
     return render(request, 'taller/Base.html', {})
