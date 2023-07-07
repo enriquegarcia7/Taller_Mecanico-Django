@@ -76,9 +76,7 @@ def mecanico(request):
 
     return render(request, 'taller/Mecanico.html', data)
 
-def index2(request):
-    return render(request, 'taller/Index2.html', {})
-
+@permission_required('taller.change_trabajo')
 def editmecanico(request,id):
 
     trabajo = get_object_or_404(Trabajo, id=id)
@@ -97,7 +95,7 @@ def editmecanico(request,id):
 
     return render(request, 'taller/EditMecanico.html', data)
 
-
+@permission_required('taller.delete_trabajo')
 def eliminar(request,id):
     trabajo = get_object_or_404(Trabajo, id=id)
     trabajo.delete()
