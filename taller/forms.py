@@ -6,12 +6,13 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 
 class ReservaForm(forms.ModelForm):
+    fecha = forms.DateField(
+        input_formats=['%d/%m/%Y'],
+        widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': 'dd/mm/yyyy'})
+    )
     class Meta:
         model = Reserva
         fields = '__all__'
-        widgets = {
-            'fecha': forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': 'dd/mm/yyyy'})
-        }
         
     def clean_fecha(self):
         fecha = self.cleaned_data['fecha']
