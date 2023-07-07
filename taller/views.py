@@ -3,6 +3,7 @@ from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm
 from .models import Trabajo
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.decorators import login_required, permission_required
 
 
 # Create your views here.
@@ -42,7 +43,7 @@ def registro(request):
         if formulario.is_valid():
             formulario.save()
             messages.success(request, "Te has registrado correctamente")            
-            return redirect(to="/")       
+            return redirect(to="login")       
         data["form"] = formulario
 
     return render(request, 'registration/registro.html', data)
@@ -50,6 +51,7 @@ def registro(request):
 def base(request):
     return render(request, 'taller/Base.html', {})
 
+@permission_required('taller.change_trabajo')
 def administrador(request):
     trabajos = Trabajo.objects.all()
 
@@ -57,7 +59,8 @@ def administrador(request):
         'trabajos' : trabajos 
     }
     return render(request, 'taller/Administrador.html',data)
-    
+
+@permission_required('taller.add_trabajo')    
 def mecanico(request):
     data = {
         'form': TrabajoForm()

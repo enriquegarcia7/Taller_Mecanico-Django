@@ -62,14 +62,16 @@
             {% endif %}
 
 
-
+            {% if perms.taller.add_trabajo %}
             <li class="nav-item">
-              <a class="nav-link" href="/mecanico">VMecanico</a>
+              <a class="nav-link" href="/mecanico">Agregar Trabajo</a>
             </li>
+            {% endif %}
+            {% if perms.taller.change_trabajo %}
             <li class="nav-item">
-              <a class="nav-link" href="/administrador">VAdministrador</a>
+              <a class="nav-link" href="/administrador">Trabajos</a>
             </li>
-            
+            {% endif %}
           </ul>
           {% block content3 %} 
 

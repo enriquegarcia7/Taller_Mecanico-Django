@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 MESSAGE_STORAGE ="django.contrib.messages.storage.cookie.CookieStorage"
 
-LOGIN_REDIRECT_URL = '/administrador/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL ='/'
 
 # Application definition

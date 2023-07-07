@@ -42,8 +42,12 @@
                 <td>{{ p.modelo | title}}</td>
                 <td>{{ p.fecha_atencion | title }}</td>
                 <td>
+                    {% if perms.taller.change_trabajo %}
                     <a href="{% url 'editmecanico' p.id %}" class="btn btn-dark btn-sm">MODIFICAR</a>
+                    {% endif %}
+                    {% if perms.taller.delete_trabajo %}
                     <a href="{% url 'eliminar' p.id %}" class="btn btn-danger btn-sm">ELIMINAR</a>
+                    {% endif %}
                 </td>
 
             </tr>
