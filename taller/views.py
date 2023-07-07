@@ -70,7 +70,7 @@ def mecanico(request):
         formulario = TrabajoForm(data=request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Trabajo Agregado"
+            messages.success(request, "Trabajo Agregado")
         else:
             data["form"] = formulario
 
@@ -78,14 +78,6 @@ def mecanico(request):
 
 def index2(request):
     return render(request, 'taller/Index2.html', {})
-
-def administrador2(request):
-    trabajos = Trabajo.objects.all()
-
-    data = {
-        'trabajos' : trabajos 
-    }
-    return render(request, 'taller/Administrador2.html',data)
 
 def editmecanico(request,id):
 
@@ -98,8 +90,8 @@ def editmecanico(request,id):
         formulario = TrabajoForm(data=request.POST, files=request.FILES , instance=trabajo)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Editado Correctamente"
-            return redirect(to="administrador2")
+            messages.success(request, "Editado Correctamente")
+            return redirect(to="administrador")
         else:
             data["form"] = formulario
 
@@ -109,4 +101,4 @@ def editmecanico(request,id):
 def eliminar(request,id):
     trabajo = get_object_or_404(Trabajo, id=id)
     trabajo.delete()
-    return redirect(to="administrador2")
+    return redirect(to="administrador")
