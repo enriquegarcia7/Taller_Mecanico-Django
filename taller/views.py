@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect , get_object_or_404 
 from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm
-from .models import Trabajo , Agenda
+from .models import Trabajo , Agenda , Reserva
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -62,10 +62,10 @@ def administrador(request):
 
 
 def agenda(request):
-    agendas = Agenda.objects.all()
+    agendas = Reserva.objects.all()
 
     data = {
-        'agendas' : agendas 
+        'reservas' : agendas 
     }
     return render(request, 'taller/Agenda.html',data)
 
