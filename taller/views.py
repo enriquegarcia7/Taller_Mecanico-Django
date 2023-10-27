@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect , get_object_or_404 
 from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm
-from .models import Trabajo
+from .models import Trabajo , Agenda
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -59,6 +59,15 @@ def administrador(request):
         'trabajos' : trabajos 
     }
     return render(request, 'taller/Administrador.html',data)
+
+
+def agenda(request):
+    agendas = Agenda.objects.all()
+
+    data = {
+        'agendas' : agendas 
+    }
+    return render(request, 'taller/Agenda.html',data)
 
 @permission_required('taller.add_trabajo')    
 def mecanico(request):

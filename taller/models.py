@@ -33,3 +33,15 @@ class Trabajo(models.Model):
 
     def __str__(self):
         return self.mecanico
+
+class Agenda(models.Model):
+    rut = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=50)
+    telefono = models.IntegerField()
+    email = models.EmailField()
+    detalle = models.CharField(max_length=2000)
+    fecha = models.DateField()
+
+
+    def __str__(self):
+        return self.rut
