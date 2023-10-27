@@ -104,8 +104,31 @@ def editmecanico(request,id):
 
     return render(request, 'taller/EditMecanico.html', data)
 
+def edithora(request,id):
+
+    reserva = get_object_or_404(Reserva, id=id)
+
+    data = {
+        'form': ReservaForm(instance=reserva)
+    }
+    if request.method == 'POST':
+        formulario = ReservaForm(data=request.POST, instance=reserva)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Editado Correctamente")
+            return redirect(to="agenda")
+        else:
+            data["form"] = formulario
+
+    return render(request, 'taller/EditHora.html', data)
+
 @permission_required('taller.delete_trabajo')
 def eliminar(request,id):
     trabajo = get_object_or_404(Trabajo, id=id)
     trabajo.delete()
     return redirect(to="administrador")
+
+def eliminarhora(request,id):
+    reserva = get_object_or_404(Reserva, id=id)
+    reserva.delete()
+    return redirect(to="agenda")

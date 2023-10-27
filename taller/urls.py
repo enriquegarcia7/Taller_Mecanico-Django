@@ -14,4 +14,7 @@ urlpatterns = [
      path('editmecanico/<id>', views.editmecanico, name='editmecanico'),
      path('eliminar/<id>', views.eliminar, name='eliminar'),
      path('agenda/', views.agenda, name='agenda'),   
+     path('edithora/<id>', views.edithora, name='edithora'),  
+     path('eliminarhora/<id>', views.eliminarhora, name='eliminarhora'),  
+     
 ]
