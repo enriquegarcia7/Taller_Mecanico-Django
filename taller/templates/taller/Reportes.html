@@ -1,0 +1,43 @@
+{% extends 'taller/Base.html' %}
+{% load static %}
+
+<!-- Contenido CSS  -->
+{% block css %}
+
+{% endblock %}
+
+
+<!-- Contenido Principal -->
+
+{% block content %}
+    <h1>Reportes de Productos</h1>
+    <table border="1">
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Costo</th>
+            <th>Proveedor</th>
+            <th>Cantidad</th>
+        </tr>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.costo }}</td>
+            <td>{{ producto.proveedor }}</td>
+            <td>{{ producto.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% endblock %}
+
+
+    <!-- Contenido Final  -->
+    
+    {% block content2 %} 
+    
+    
+    {% endblock %}
