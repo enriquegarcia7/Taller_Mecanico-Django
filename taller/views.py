@@ -126,9 +126,11 @@ def edithora(request,id):
 def eliminar(request,id):
     trabajo = get_object_or_404(Trabajo, id=id)
     trabajo.delete()
+    messages.success(request,"Eliminado correctamente")
     return redirect(to="administrador")
 
 def eliminarhora(request,id):
     reserva = get_object_or_404(Reserva, id=id)
     reserva.delete()
+    messages.success(request,"Eliminado correctamente")
     return redirect(to="agenda")
