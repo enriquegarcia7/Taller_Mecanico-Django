@@ -216,13 +216,11 @@ def listar(request):
     return render(request, 'taller/Producto/Listar.html', data)
 
 def modificar(request, id):
-    
-    producto= get_object_or_404(Producto, id=id)
+    producto = get_object_or_404(Producto, id=id)
 
     data = {
         'form': ProductoForm(instance=producto)
     }
-
     if request.method == 'POST':
         formulario = ProductoForm(data=request.POST, instance=producto)
         if formulario.is_valid():
@@ -232,8 +230,7 @@ def modificar(request, id):
         else:
             data["form"] = formulario
 
-
-    return render(request, 'taller/Producto/Modificar.html')
+    return render(request, 'taller/Producto/Modificar.html', data)
 
 def eliminar(request, id):
     producto = get_object_or_404(Producto, id=id)
