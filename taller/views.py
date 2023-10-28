@@ -172,9 +172,11 @@ def eliminar(request,id):
 def eliminarhora(request,id):
     reserva = get_object_or_404(Reserva, id=id)
     reserva.delete()
+    messages.success(request, "eliminado correctamente!")
     return redirect(to="agenda")
 
 def eliminarservicio(request,id):
     reserva = get_object_or_404(Reserva, id=id)
     reserva.delete()
+    messages.success(request, "eliminado correctamente!")
     return redirect(to="gestionarservicios")
