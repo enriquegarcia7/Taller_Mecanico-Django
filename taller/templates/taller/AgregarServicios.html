@@ -1,0 +1,32 @@
+{% extends 'taller/Base.html' %}
+{% load static %}
+
+<!-- Contenido Principal -->
+
+{% block content %}
+{% load crispy_forms_tags%}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title text-center mb-4">Agregar Servicio</h4>
+            <form action="" class="" method="post">
+
+              {% csrf_token %}
+              {{ form | crispy }}
+              
+              <br>
+              <br>
+              <button type="submit" class="btn btn-dark">Guardar</button>
+          
+            </form>
+            {{mensaje}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

@@ -16,5 +16,8 @@ urlpatterns = [
      path('agenda/', views.agenda, name='agenda'),   
      path('edithora/<id>', views.edithora, name='edithora'),  
      path('eliminarhora/<id>', views.eliminarhora, name='eliminarhora'),  
-     
+     path('agregarservicios/', views.agregarservicios, name='agregarservicios'), 
+     path('gestionarservicios/', views.gestionarservicios, name='gestionarservicios'), 
+     path('editservicio/<id>', views.editservicio, name='editservicio'), 
+     path('eliminarservicio/<id>', views.eliminarservicio, name='eliminarservicio'), 
 ]

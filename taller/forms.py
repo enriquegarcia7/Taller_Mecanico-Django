@@ -1,12 +1,12 @@
 from django import forms
-from .models import Reserva , Trabajo , Agenda
+from .models import Reserva , Trabajo , Servicio
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 
 class ReservaForm(forms.ModelForm):
-    model = Agenda
+    model = Reserva
     fecha = forms.DateField(
         input_formats=['%d/%m/%Y'],
         widget=forms.DateInput(format='%d/%m/%Y', attrs={'placeholder': 'dd/mm/yyyy'})
@@ -38,6 +38,10 @@ class TrabajoForm(forms.ModelForm):
         model = Trabajo
         fields = '__all__'
 
+class ServicioForm(forms.ModelForm):
+   class Meta:
+        model = Servicio
+        fields = '__all__'
 
 
 class CustomUserCreationForm(UserCreationForm):
