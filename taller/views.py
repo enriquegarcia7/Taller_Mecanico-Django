@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect , get_object_or_404 
-from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm , ServicioForm
-from .models import Trabajo , Servicio , Reserva
+from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm
+from .models import Trabajo , Agenda , Reserva
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -21,7 +21,7 @@ def agendar(request):
         formulario = ReservaForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            messages.success(request, "Reserva realizada!")
+            data["mensaje"] = "Reserva realizada!"
         else:
             data["form"] = formulario
             
@@ -68,29 +68,6 @@ def agenda(request):
         'reservas' : agendas 
     }
     return render(request, 'taller/Agenda.html',data)
-
-def agregarservicios(request):
-    data = {
-        'form': ServicioForm()
-    }
-    if request.method == 'POST':
-        formulario = ServicioForm(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            data["mensaje"] = "Servicio Creado con Exito."
-        else:
-            data["form"] = formulario
-            
-    return render(request, 'taller/AgregarServicios.html', data)
-
-def gestionarservicios(request):
-    servicios = Servicio.objects.all()
-
-    data = {
-        'servicios' : servicios 
-    }
-    return render(request, 'taller/GestionarServicios.html',data)
-
 
 @permission_required('taller.add_trabajo')    
 def mecanico(request):
@@ -145,36 +122,15 @@ def edithora(request,id):
 
     return render(request, 'taller/EditHora.html', data)
 
-def editservicio(request,id):
-
-    servicio = get_object_or_404(Servicio, id=id)
-
-    data = {
-        'form': ServicioForm(instance=servicio)
-    }
-    if request.method == 'POST':
-        formulario = ServicioForm(data=request.POST, instance=servicio)
-        if formulario.is_valid():
-            formulario.save()
-            messages.success(request, "Editado Correctamente")
-            return redirect(to="gestionarservicios")
-        else:
-            data["form"] = formulario
-
-    return render(request, 'taller/EditServicio.html', data)
-
 @permission_required('taller.delete_trabajo')
 def eliminar(request,id):
     trabajo = get_object_or_404(Trabajo, id=id)
     trabajo.delete()
+    messages.success(request,"Eliminado correctamente")
     return redirect(to="administrador")
 
 def eliminarhora(request,id):
     reserva = get_object_or_404(Reserva, id=id)
     reserva.delete()
+    messages.success(request,"Eliminado correctamente")
     return redirect(to="agenda")
-
-def eliminarservicio(request,id):
-    reserva = get_object_or_404(Reserva, id=id)
-    reserva.delete()
-    return redirect(to="gestionarservicios")
