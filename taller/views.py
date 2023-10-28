@@ -83,7 +83,7 @@ def agregarservicios(request):
         formulario = ServicioForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Servicio Creado con Exito."
+            messages.success(request, "Servicio Creado con Exito.") 
         else:
             data["form"] = formulario
             
@@ -200,7 +200,7 @@ def agregar_producto(request):
         formulario = ProductoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Guardado correctamente"
+            messages.success(request, "Guardado correctamente")
         else:
             data["form"] = formulario
 
@@ -238,6 +238,7 @@ def modificar(request, id):
 def eliminar(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
+    messages.success(request, "Eliminado correctamente")
     return redirect (to="reportes")
 
 def generar_orden_pedido_pdf(request):
