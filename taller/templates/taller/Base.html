@@ -25,7 +25,7 @@
         <a class="navbar-brand" href="/"><img src="{%static 'images/logo.png'%}" alt="Rayo Makween" width="30" height="30">SERVIEXPRESS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          navbar-light
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -68,21 +68,26 @@
             </li>
             {% endif %}
             {% if perms.taller.change_trabajo %}
-            <li class="nav-item">
+            
+            
+            
+            
+              
               <a class="nav-link" href="/administrador">Trabajos</a>
               
               <a class="nav-link" href="/agenda">Agenda</a>
 
-              <a class="nav-link" href="/gestionarservicios">Gestionar Servicios</a>
+              <a class="nav-link" href="/gestionarservicios" >Gestionar Servicios</a>
               <a class="nav-link" href="/agregarservicios">Agregar servicio</a>
 
-              <a class="nav-link" href="/agregar-producto">Agregar Producto</a>
-              <a class="nav-link" href="/listar">Listar Productos</a>
+              <a class="nav-link" href="/agregarproductoinv">Ingresar Producto</a>
+              <a class="nav-link" href="/listar">Solicitar Productos</a>
+              <a class="nav-link" href="/inventario">Ver Inventario</a>
              
               
 
 
-            </li>
+           
             {% endif %}
           </ul>
           {% block content3 %} 
@@ -91,12 +96,7 @@
           {% endblock %}
 
 
-          <form class="d-flex">
-            <div class="input-group">
-              <input class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-light" type="submit">Buscar</button>
-            </div>
-          </form>
+
         </div>
       </div>
     </nav>

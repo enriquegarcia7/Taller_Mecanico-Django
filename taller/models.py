@@ -56,3 +56,16 @@ class Producto(models.Model):
     
     def __str__(self):
         return self.proveedor
+
+
+class Producto2(models.Model):
+    codigo = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=100)
+    costo = models.IntegerField()
+    proveedor = models.CharField(max_length=100)
+    cantidad = models.IntegerField()
+    fecha = models.DateField(default=timezone.now)
+    descripcion = models.TextField()
+    
+    def __str__(self):
+        return self.proveedor
