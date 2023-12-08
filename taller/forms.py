@@ -1,5 +1,5 @@
 from django import forms
-from .models import Reserva , Trabajo , Servicio , Producto
+from .models import Reserva , Trabajo , Servicio , Producto2 , Producto
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -57,3 +57,9 @@ class ProductoForm(forms.ModelForm):
         widgets = {
             "fecha":forms.SelectDateWidget()
         }
+
+class Producto2Form(forms.ModelForm):
+    class Meta:
+        model = Producto2
+        fields = '__all__'
+        

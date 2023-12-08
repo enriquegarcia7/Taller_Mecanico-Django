@@ -21,8 +21,12 @@ urlpatterns = [
      path('editservicio/<id>', views.editservicio, name='editservicio'), 
      path('eliminarservicio/<id>', views.eliminarservicio, name='eliminarservicio'), 
      path('generar_orden_pedido_pdf/', views.generar_orden_pedido_pdf, name='generar_orden_pedido_pdf'),
-     path('agregar-producto/', views.agregar_producto,name='agregar_producto'),
+     path('agregar_producto/', views.agregar_producto,name='agregar_producto'),
+     path('agregarproductoinv/', views.agregarproductoinv,name='agregarproductoinv'),
      path('listar/', views.listar, name='reportes'),
+     path('modificar/<id>', views.modificar, name='modificar'),
+     path('eliminar/<id>', views.eliminar, name='eliminar'),
+     path('inventario/', views.inventario, name='inventario'),
      path('modificar/<id>', views.modificar, name='modificar'),
      path('eliminar/<id>', views.eliminar, name='eliminar'),
 ]

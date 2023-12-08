@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect , get_object_or_404 
-from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm , ServicioForm , ProductoForm
-from .models import Trabajo , Servicio , Reserva , Producto
+from .forms import ReservaForm , TrabajoForm , CustomUserCreationForm , ServicioForm , Producto2Form, ProductoForm
+from .models import Trabajo , Servicio , Reserva , Producto , Producto2
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required, permission_required
@@ -276,3 +276,51 @@ def generar_orden_pedido_pdf(request):
     response.write(buffer.getvalue())
     buffer.close()
     return response
+
+
+def inventario(request):
+    productos2 = Producto2.objects.all()
+
+    data= {
+    'productos2': productos2
+    }
+
+    return render(request, 'taller/Inventario/Inventario.html', data)
+
+def modificar(request, id):
+    producto = get_object_or_404(Producto, id=id)
+
+    data = {
+        'form': ProductoForm(instance=producto)
+    }
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Editado Correctamente")
+            return redirect(to="inventario")
+        else:
+            data["form"] = formulario
+
+    return render(request, 'taller/Producto/Modificar.html', data)
+
+def eliminar(request, id):
+    producto = get_object_or_404(Producto, id=id)
+    producto.delete()
+    messages.success(request, "Eliminado correctamente")
+    return redirect (to="reportes")
+
+
+def agregarproductoinv(request):
+    data={
+        'form': Producto2Form()
+    }
+    if request.method == 'POST':
+        formulario = Producto2Form(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Guardado correctamente")
+        else:
+            data["form"] = formulario
+
+    return render(request, 'taller/Inventario/AgregarProductoInv.html',  data)
