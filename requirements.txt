@@ -1,4 +1,4 @@
-Django~=3.2.10
+Django~=4.2.21
 pillow  
 django-admin-interface
 django-crispy-forms
