@@ -1,7 +1,8 @@
-Django~=3.2.10
+Django~=4.2.27
 pillow  
 django-admin-interface
 django-crispy-forms
 crispy-bootstrap5
 django-bootstrap-datepicker
 reportlab
+sqlparse>=0.5.4 # not directly required, pinned by Snyk to avoid a vulnerability
